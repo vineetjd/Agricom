@@ -110,83 +110,27 @@ function hideURLbar(){ window.scrollTo(0,1); }
 		</div>
 	</div>
 		<div class="container card form_container" style="display: flex; justify-content: center; align-items: center;">
-			<form class="form" action="submitTrader" method=post style="padding-top:40px;">
+			<form class="form" action="loginFarmer" method=post style="padding-top:40px;">
 			  <div class="form-row" style="width:550px">
-			  	<div class="form-group col-md-12">
-			    	<br><label for="name">Name</label>
-			    	<input type="text" class="form-control" name="inputName" placeholder="Enter your name" required>
-			  	</div>
 			    <div class="form-group col-md-12">
 			      <label for="inputEmail4">Email</label>
 			      <input type="email" class="form-control" name="inputEmail" placeholder="example@example.com" required>
 			    </div>
 			    <div class="form-group col-md-12">
-			      <label for="inputMobile">Mobile</label>
-			      <input type="tel" class="form-control" name="inputMobile" placeholder="XXXXXXXXXX" required>
-			    </div>
-			    <div class="form-group col-md-12">
-			      <label for="inputPassword4">Password</label>
+			      <label for="inputPassword">Password</label>
 			      <input type="password" class="form-control" name="inputPassword" placeholder="Password" required>
-			    </div>
-			    <div class="form-group col-md-12">
-			      <label for="inputPassword4">Confirm Password</label>
-			      <input type="password" class="form-control" name="inputPassword" placeholder="Password" required>
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputAddress">Address</label>
-			    <input type="text" class="form-control" name="inputAddress" placeholder="1234 Main St" >
-			    </div>
-			  </div>
-
-			  <div class="form-row" style="width:550px;">
-			    <div class="form-group col-md-5">
-			      <label for="inputCity">City</label>
-			      <input type="text" class="form-control" name="inputCity" placeholder="City" >
-			    </div>			    
-			    <div class="form-group col-md-5">
-			      <label for="inputState">State</label>
-			      <select name="inputState" class="form-control">
-			        <option selected>State</option>
-			        <option>Maharashtra</option>
-			        <option>Tamil Nadu</option>
-			        <option>Karnataka</option>
-			      </select>
-			    </div>
-			    <div class="form-group col-md-2">
-			      <label for="inputZip">Zip</label>
-			      <input type="text" class="form-control" name="inputZip">
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputAccNo">Account No.</label>
-			    <input type="text" class="form-control" name="inputAccNo" placeholder="XXXXXXXXXXXX" >
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputIFSC">IFSC Code</label>
-			    <input type="text" class="form-control" name="inputIFSC" placeholder="XXXXXXXXXXX" >
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputAadhaar">Aadhaar</label>
-			    <input type="file" class="form-control" name="inputAadhaar" accept="application/pdf" placeholder="XXXXXXXXXXXX" >
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputPAN">PAN</label>
-			    <input type="file" class="form-control" name="inputPAN" accept="application/pdf" placeholder="XXXXXXXXXXXX" >
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputCertificate">Trader's License</label>
-			    <input type="file" class="form-control" name="inputTraderLicense" accept="application/pdf" placeholder="XXXXXXXXXXXX" ><br>
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <div class="form-check">
-			      <p>Already a user? Skip to <a class="login_ref" href="login.html" id="checkuser">Login</a></p>
+			      <p>Not a user? <a class="login_ref" href="index/#small-dialog1" id="checkuser">Register</a></p>
 			      
 			      <!-- <label class="form-check-label" for="gridCheck">
 			        Check me out
 			      </label> -->
 			    </div>
 			  </div>
-			  <button type="submit" class="btn btn-primary">Sign in</button>
+			  <button type="submit" class="btn btn-primary">Login</button>
 			</form>	
 		</div>
 </body>
