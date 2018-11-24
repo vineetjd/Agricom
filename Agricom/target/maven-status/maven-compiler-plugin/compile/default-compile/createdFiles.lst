@@ -1,0 +1,8 @@
+com\dao\UserMapper.class
+com\model\Login.class
+com\model\Trader.class
+com\controller\TraderController.class
+com\model\Farmer.class
+com\model\Bank.class
+com\dao\TraderDAO.class
+com\model\Address.class
