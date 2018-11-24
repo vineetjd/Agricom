@@ -1,0 +1,17 @@
+create table trader(
+   tr_id number(5) primary key,
+   name varchar2(20),
+   mobileNo number(10),
+   email varchar2(30),
+   password varchar2(40),
+   a_id number(5),
+   foreign key (a_id) references address(a_id)
+)
+
+create table address(
+   a_id number(5) primary key,
+   addressline varchar2(100) not null,
+   district varchar2(50),
+   state varchar2(40),
+   zip number(6)
+)

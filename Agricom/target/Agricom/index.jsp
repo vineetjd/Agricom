@@ -10,9 +10,9 @@ addEventListener("load", function()
 { setTimeout(hideURLbar, 0); }, false); 
 function hideURLbar(){ window.scrollTo(0,1); } 
 </script>
-<script src="js/jquery-1.11.0.min.js"></script>
-<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-<link href="css/style.css" rel='stylesheet' type='text/css' />
+<script src="/js/jquery-1.11.0.min.js"></script>
+<link href="/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="/css/style.css" rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
