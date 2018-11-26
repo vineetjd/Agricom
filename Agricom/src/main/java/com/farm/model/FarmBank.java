@@ -1,6 +1,7 @@
 package com.farm.model;
 
 public class FarmBank {
+	private int baID;
 	private String bIFSC;
 	private String bAccNo;
 	

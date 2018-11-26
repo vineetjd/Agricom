@@ -1,6 +1,7 @@
 package com.farm.model;
 
 public class FarmTrader {
+	private int tID;
 	private String tName;
 	private long tMobileNo;
 	private String tEmail;

@@ -1,0 +1,149 @@
+1. TRADER
+
+g3_trader
+
+CREATE TABLE g3_trader(
+tId NUMBER(10) PRIMARY KEY,
+tName VARCHAR2(20) NOT NULL,
+tMobileNo NUMBER(10),
+tEmail VARCHAR2(40) NOT NULL,
+tPassword VARCHAR2(30) NOT NULL,
+aID NUMBER(10),
+baID NUMBER(10),
+FOREIGN KEY(aID) references g3_address(aID),
+FOREIGN KEY(bID) references g3_bank(baID)
+);
+
+CREATE SEQUENCE trader_seq
+ START WITH     1
+ INCREMENT BY   1
+ NOCACHE
+ NOCYCLE;
+
+CREATE OR REPLACE TRIGGER trader_setId
+  BEFORE INSERT ON g3_trader
+  FOR EACH ROW
+BEGIN
+  SELECT trader_seq.nextval
+  INTO :new.tId
+  FROM dual;
+END;
+
+
+2. FARMER
+
+g3_farmer
+
+CREATE TABLE g3_farmer(
+fId NUMBER(10) PRIMARY KEY,
+fName VARCHAR2(20) NOT NULL,
+fMobileNo NUMBER(10),
+fEmail VARCHAR2(40) NOT NULL,
+fPassword VARCHAR2(30) NOT NULL,
+aID NUMBER(10),
+bID NUMBER(10),
+FOREIGN KEY(aID) references g3_address(aID),
+FOREIGN KEY(bID) references g3_bank(baID)
+);
+
+CREATE SEQUENCE farmer_seq
+ START WITH     1
+ INCREMENT BY   1
+ NOCACHE
+ NOCYCLE;
+
+CREATE OR REPLACE TRIGGER farmer_setId
+  BEFORE INSERT ON g3_farmer
+  FOR EACH ROW
+BEGIN
+  SELECT farmer_seq.nextval
+  INTO :new.fId
+  FROM dual;
+END;
+
+
+3. ADDRESS
+
+g3_address
+
+CREATE TABLE g3_address(
+aId NUMBER(10) PRIMARY KEY,
+aAddressLine VARCHAR2(70) NOT NULL,
+aCity VARCHAR2(20) NOT NULL,
+aState VARCHAR2(20) NOT NULL,
+aZip NUMBER(10)
+);
+
+CREATE SEQUENCE address_seq
+ START WITH     1
+ INCREMENT BY   1
+ NOCACHE
+ NOCYCLE;
+
+CREATE OR REPLACE TRIGGER address_setId
+  BEFORE INSERT ON g3_address
+  FOR EACH ROW
+BEGIN
+  SELECT address_seq.nextval
+  INTO :new.aId
+  FROM dual;
+END;
+
+4. BANK
+
+g3_bank
+
+CREATE TABLE g3_bank(
+baID NUMBER(10) PRIMARY KEY,
+baAccountNo VARCHAR2(20) NOT NULL,
+baIFSC VARCHAR2(20) NOT NULL
+);
+
+CREATE SEQUENCE bank_seq
+ START WITH     1
+ INCREMENT BY   1
+ NOCACHE
+ NOCYCLE;
+
+CREATE OR REPLACE TRIGGER bank_setId
+  BEFORE INSERT ON g3_bank
+  FOR EACH ROW
+BEGIN
+  SELECT bank_seq.nextval
+  INTO :new.baId
+  FROM dual;
+END;
+
+
+5. CROP
+
+g3_crops
+
+CREATE TABLE g3_crops(
+cID NUMBER(10) PRIMARY KEY,
+cType VARCHAR2(20),
+cName VARCHAR2(20),
+cFertilizerType VARCHAR2(20),
+cQuantity NUMBER(10),
+cStatus number(5) default 0,
+cBasePrice NUMBER(10),
+cSellPrice NUMBER(10) default 0,
+cRequest_status number(5) default 0,
+fID NUMBER(10),
+FORIGN KEY(fID) references G3_FARMER(fID)
+);
+
+CREATE SEQUENCE crops_seq
+ START WITH     1
+ INCREMENT BY   1
+ NOCACHE
+ NOCYCLE;
+
+CREATE OR REPLACE TRIGGER crops_setId
+  BEFORE INSERT ON g3_crops
+  FOR EACH ROW
+BEGIN
+  SELECT crops_seq.nextval
+  INTO :new.cID
+  FROM dual;
+END;

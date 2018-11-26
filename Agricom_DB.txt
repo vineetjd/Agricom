@@ -15,3 +15,5 @@ create table address(
    state varchar2(40),
    zip number(6)
 )
+
+select * from (select * from bidding order by b_id desc) where rownum=1

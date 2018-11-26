@@ -1,6 +1,7 @@
 package com.farm.model;
 
 public class FarmAddress {
+	private int aID;
 	private String aLine;
 	private String aCity;
 	private String aState;

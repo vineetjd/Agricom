@@ -2,6 +2,7 @@ package com.farm.model;
 
 public class FarmCrop {
 	
+	private int cID;
 	private String cName;
 	private String cType;
 	private String cFertilizer;
@@ -9,6 +10,14 @@ public class FarmCrop {
 	private String cStatus;
 	private double cBasePrice;
 	private double cSellPrice;
+	private String cRequestStatus;
+	
+	public String getcRequestStatus() {
+		return cRequestStatus;
+	}
+	public void setcRequestStatus(String cRequestStatus) {
+		this.cRequestStatus = cRequestStatus;
+	}
 	private FarmFarmer cFarmer;
 	
 	public FarmFarmer getcFarmer() {

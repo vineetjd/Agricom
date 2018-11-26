@@ -1,9 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Current Bid</title>
+<title>Current Bid</title>
 
-	<!-- <script type="text/javascript">
+<!-- <script type="text/javascript">
 		
 		
 		function fetchData(){
@@ -26,13 +29,32 @@ $.get("getLatestBiddingDetails", function(data) {
 
 </head>
 <body>
-	
+	<%
+		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+		if (session.getAttribute("name") == null) {
+			response.sendRedirect("Start.jsp");
+		}
+	%>
+	<div id="row"
+		style="display: flex; justify-content: center; align-items: center; width: 550px;">
+		<div class="col-md-12">
+			<form action="placeBid">
+				<input type="submit" value="Reload"><br>
+				<br>
+			</form>
+		</div>
+	</div>
 
 
 
 	<form action="submitBid">
-		<input type="number" name="bidAmount"><br>
-		<input type="submit" value="Bid">
+		<label>Crop: </label> <input type="text" value=${crop.getcName() }
+			name="cName" readonly><br> <label>Quantity</label> <input
+			type="number" value=${crop.getcQuantity() } readonly>Quintals<br>
+		<label>Current Bid: </label> <input type="number"
+			value=${crop.getcSellPrice() }><br> <label>Place
+			Bid: </label> <input type="number" name="bidAmount"><br> <input
+			type="submit" value="Bid">
 	</form>
 
 </body>
