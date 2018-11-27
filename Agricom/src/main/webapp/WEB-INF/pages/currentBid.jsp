@@ -29,12 +29,6 @@ $.get("getLatestBiddingDetails", function(data) {
 
 </head>
 <body>
-	<%
-		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-		if (session.getAttribute("name") == null) {
-			response.sendRedirect("Start.jsp");
-		}
-	%>
 	<div id="row"
 		style="display: flex; justify-content: center; align-items: center; width: 550px;">
 		<div class="col-md-12">
