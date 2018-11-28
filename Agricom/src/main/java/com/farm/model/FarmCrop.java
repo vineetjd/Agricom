@@ -12,6 +12,9 @@ public class FarmCrop {
 	private double cSellPrice;
 	private String cRequestStatus;
 	
+	public int getcID() {
+		return cID;
+	}
 	public String getcRequestStatus() {
 		return cRequestStatus;
 	}

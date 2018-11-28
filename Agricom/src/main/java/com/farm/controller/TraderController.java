@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.farm.dao.TraderDAO;
+import com.farm.dao.TraderDAOImplement;
 import com.farm.model.FarmAddress;
 import com.farm.model.FarmBank;
 import com.farm.model.FarmBidding;
@@ -24,7 +24,7 @@ import com.farm.model.FarmCrop;
 public class TraderController {
 	
 	@Autowired
-	TraderDAO tdao;
+	TraderDAOImplement tdao;
 	
 	@RequestMapping(value="/registerTrader",method=RequestMethod.POST)
 	public ModelAndView register( ) 
@@ -93,13 +93,22 @@ public class TraderController {
 		return new ModelAndView("bidSchedule");
 	}
 	
+	
 	@RequestMapping("/placeBid")
-	public ModelAndView placeBid(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView placeBid() {
 		FarmCrop crop=tdao.getCrop();
-		HttpSession session=request.getSession(true);
+		//HttpSession session=request.getSession(true);
 		return new ModelAndView("currentBid","crop",crop);
 	}
 	
+	@RequestMapping("bidResult")
+	public ModelAndView bidResult(){
+		FarmCrop crop=tdao.getCrop();
+		System.out.println(crop.getcID());
+		tdao.setStatus(crop.getcID());
+		return new ModelAndView("bidResult","crop",crop);
+	}
+
 	/*@RequestMapping("index")
 	public ModelAndView viewIndex() {
 		return new ModelAndView("index");

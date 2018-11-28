@@ -38,7 +38,12 @@
 		<property name="dataSource" ref="ds"></property>
 	</bean>
 
-	<bean id="tdao" class="com.farm.dao.TraderDAO">
+	<bean id="tdao" class="com.farm.dao.TraderDAOImplement">
+		<property name="jdbcTemplate" ref="jdbcTemplate">
+		</property>
+	</bean>
+	
+	<bean id="fdao" class="com.farm.dao.FarmerDAOImplement">
 		<property name="jdbcTemplate" ref="jdbcTemplate">
 		</property>
 	</bean>
